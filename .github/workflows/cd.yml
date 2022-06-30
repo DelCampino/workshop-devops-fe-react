@@ -11,13 +11,15 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: dawwid6/action-download-artifact@v2
         with:
+          workflow: ci
+          workflow_conclussion: success
           name: frontend-devops
       - uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: main
-          build_dir: public
+          target_branch: gh_pages
+          build_dir: .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
