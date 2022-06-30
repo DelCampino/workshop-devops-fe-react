@@ -21,7 +21,7 @@ jobs:
           target_branch: gh-pages
           build_dir: .
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 # 1. Download artifact
 # 2. Deploy to github pages
